@@ -1,0 +1,12 @@
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl a_drc.vhf -w D:/UCO/laboratorio3/a.sch 
+sch2sym -intstyle ise -family spartan3e -refsym a D:/UCO/laboratorio3/a.sch D:/UCO/laboratorio3/a.sym 
+xst -intstyle ise -ifn "D:/UCO/laboratorio3/a.xst" -ofn "D:/UCO/laboratorio3/a.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-vq100-4 a.ngc a.ngd  
+map -intstyle ise -p xc3s100e-vq100-4 -cm area -ir off -pr off -c 100 -o a_map.ncd a.ngd a.pcf 
+par -w -intstyle ise -ol high -t 1 a_map.ncd a.ncd a.pcf 

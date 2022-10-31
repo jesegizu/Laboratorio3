@@ -1,0 +1,8 @@
+vhdl isim_temp "g.vhf"
+vhdl isim_temp "f.vhf"
+vhdl isim_temp "e.vhf"
+vhdl isim_temp "d.vhf"
+vhdl isim_temp "c.vhf"
+vhdl isim_temp "b.vhf"
+vhdl isim_temp "a.vhf"
+vhdl isim_temp "union.vhd"

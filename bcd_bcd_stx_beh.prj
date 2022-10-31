@@ -1,0 +1,3 @@
+vhdl isim_temp "b.vhf"
+vhdl isim_temp "a.vhf"
+vhdl isim_temp "union.vhd"

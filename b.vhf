@@ -1,0 +1,82 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 14.7
+--  \   \         Application : sch2hdl
+--  /   /         Filename : b.vhf
+-- /___/   /\     Timestamp : 10/30/2022 21:47:49
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl D:/UCO/laboratorio3/b.vhf -w D:/UCO/laboratorio3/b.sch
+--Design Name: b
+--Device: spartan3e
+--Purpose:
+--    This vhdl netlist is translated from an ECS schematic. It can be 
+--    synthesized and simulated, but it should not be modified. 
+--
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+
+entity b is
+   port ( X  : in    std_logic_vector (3 downto 0); 
+          Zb : out   std_logic);
+end b;
+
+architecture BEHAVIORAL of b is
+   attribute BOX_TYPE   : string ;
+   signal XLXN_19 : std_logic;
+   signal XLXN_20 : std_logic;
+   component AND3B2
+      port ( I0 : in    std_logic; 
+             I1 : in    std_logic; 
+             I2 : in    std_logic; 
+             O  : out   std_logic);
+   end component;
+   attribute BOX_TYPE of AND3B2 : component is "BLACK_BOX";
+   
+   component AND4B2
+      port ( I0 : in    std_logic; 
+             I1 : in    std_logic; 
+             I2 : in    std_logic; 
+             I3 : in    std_logic; 
+             O  : out   std_logic);
+   end component;
+   attribute BOX_TYPE of AND4B2 : component is "BLACK_BOX";
+   
+   component OR2
+      port ( I0 : in    std_logic; 
+             I1 : in    std_logic; 
+             O  : out   std_logic);
+   end component;
+   attribute BOX_TYPE of OR2 : component is "BLACK_BOX";
+   
+begin
+   XLXI_1 : AND3B2
+      port map (I0=>X(3),
+                I1=>X(1),
+                I2=>X(0),
+                O=>XLXN_19);
+   
+   XLXI_2 : AND4B2
+      port map (I0=>X(3),
+                I1=>X(0),
+                I2=>X(2),
+                I3=>X(1),
+                O=>XLXN_20);
+   
+   XLXI_3 : OR2
+      port map (I0=>XLXN_20,
+                I1=>XLXN_19,
+                O=>Zb);
+   
+end BEHAVIORAL;
+
+
